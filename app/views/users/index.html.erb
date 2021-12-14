@@ -3,7 +3,7 @@
   <% @users.each do |user| %>
     <li>
       姓名: <%= user.name %>
-      生日: <%= birthday(user.birthday) %>
+      生日: <%= user.decorate.birthday(Date.current) %>
       年齡: <%= user.age %>
         <%= link_to "詳細" , user_path(user) %>
         <%= link_to "編輯" , edit_user_path(user) %>
