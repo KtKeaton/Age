@@ -11,7 +11,7 @@ class UserDecorator < Draper::Decorator
   end
 
   def birthday_sino(date)
-    "民國#{date.year - 1911}年#{date.month}月#{date.day}日"
+    "中華民國#{date.year - 1911}年#{date.month}月#{date.day}日".tr('1234567890', '壹貳參肆伍陸柒捌玖零')
   end
 
   def anotherday(date)

@@ -2,13 +2,15 @@
 <ul>
   <% @users.each do |user| %>
     <li>
-      姓名: <%= user.name %>
-      生日: <%= user.decorate.birthday(Date.current) %>
-      年齡: <%= user.age %>
+      姓名: <%= user.name %><br>
+      生日: <%= user.decorate.birthday(Date.current) %><br>
+      生日(國字): <%= user.decorate.birthday_sino(Date.current) %><br>
+      年齡: <%= user.age %><br>
         <%= link_to "詳細" , user_path(user) %>
         <%= link_to "編輯" , edit_user_path(user) %>
         <%= link_to "刪除" , user_path(user), method: :delete, data:{ confirm: "確定嗎？" } %>
     </li>
+    <br>
     <% end %>
 </ul>
 
