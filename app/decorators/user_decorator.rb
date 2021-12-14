@@ -1,0 +1,3 @@
+class ArticleDecorator < Draper::Decorator
+# ...
+end

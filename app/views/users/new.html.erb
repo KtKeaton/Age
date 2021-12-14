@@ -1,0 +1,25 @@
+<%= form_for(@user) do |form| %>
+      <div>
+        <%= form.label :name, "姓名" %>
+          <%= form.text_field :name %>
+      </div>
+
+      <div>
+        <%= form.label :birthday, "生日" %>
+          <%= form.datetime_field :birthday%>
+      </div>
+
+      <div>
+        <%= form.submit "儲存" %>
+      </div>
+
+  <% if @user.errors.present? %>
+    <ol>
+      <% @user.errors.each do |error, message| %>
+        <li>WARNING: <%= "#{error.capitalize}  #{message}" %>
+        </li>
+        <% end %>
+    </ol>
+    <% end %>
+<% end %>
+
